@@ -1,0 +1,15 @@
+<h2>Select a search category</h2>
+<select #value>
+  <option value="people">People</option>
+  <option value="films">Films</option>
+  <option value="starships">Ships</option>
+</select>
+<input #search type="text" placeholder="Search...">
+<button (click)="onSubmit(value.value, search.value)">Search</button>
+<div>
+  <ul>
+    <li *ngFor="let result of results">
+      <p>{{ result | json }}</p>
+    </li>
+  </ul>
+</div>
